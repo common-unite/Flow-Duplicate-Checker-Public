@@ -1,22 +1,22 @@
-minimum_cumulusci_version: '3.43.0'
+minimum_cumulusci_version: '3.60.0'
 project:
-    name: FormBuilder
+    name: cUnite_FlowDuplicateCheck
     package:
-        name: 'Flow Tool Kit: Form and Table Builder'
+        name: 'FlowToolKit: Duplicate Check'
         namespace: FlowToolKit
-        api_version: '55.0'
+        api_version: '54.0'
     git:
+        repo_url: 'https://github.com/common-unite/cUnite_DuplicateCheck'
     source_format: sfdx
 
-
 flows:
+
     release_2gp_beta:
         steps:
             90:
                 task: github_copy_subtree
                 options:
                     tag_name: "latest_beta"
-
 
     release_2gp_production:
         steps:
@@ -26,34 +26,25 @@ flows:
                     tag_name: "latest"
 
 tasks:
-
-    github_copy_subtree:
-        options:
-            repo_url: "https://github.com/common-unite/Flow_Tool_Kit_Public"
-            branch: "main"
-            create_release: true
-            release_body: true
-            include: [ "cumulusci.yml","sfdx-project.json","orgs/" ]
-
     robot:
         options:
-            suites: robot/FormBuilder/tests
+            suites: robot/cUnite_FlowDuplicateCheck/tests
             options:
-                outputdir: robot/FormBuilder/results
+                outputdir: robot/cUnite_FlowDuplicateCheck/results
 
     robot_testdoc:
         options:
-            path: robot/FormBuilder/tests
-            output: robot/FormBuilder/doc/FormBuilder_tests.html
+            path: robot/cUnite_FlowDuplicateCheck/tests
+            output: robot/cUnite_FlowDuplicateCheck/doc/cUnite_FlowDuplicateCheck_tests.html
 
     run_tests:
         options:
-            required_org_code_coverage_percent: 90
+            required_org_code_coverage_percent: 75
 
-
-orgs:
-    scratch:
-        build:
-            config_file: orgs/build.json
-        packaging:
-            config_file: orgs/packaging.json
+github_copy_subtree:
+    options:
+        repo_url: "https://github.com/common-unite/Flow-Duplicate-Checker-Public"
+        branch: "main"
+        create_release: true
+        release_body: true
+        include: ["cumulusci.yml","sfdx-project.json","orgs/"]

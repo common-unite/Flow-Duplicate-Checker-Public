@@ -1,11 +1,7 @@
 {
-  "orgName": "Form Builder - Feature Test Org",
+  "orgName": "FlowToolKit: Duplicate Check - Feature Test Org",
   "edition": "Developer",
-  "features": ["enableSetPasswordInApi", "PlatformCache", "ProviderFreePlatformCache"],
   "settings": {
-    "languageSettings": {
-      "enableTranslationWorkbench": true
-    },
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
     },
@@ -21,19 +17,8 @@
         "forceRelogin": false
       }
     },
-    "experienceBundleSettings": {
-      "enableExperienceBundleMetadata": true
-    },
-    "flowSettings": {
-      "enableFlowPauseEnabled": true
-    }
-  },
-  "objectSettings" : {
-    "contact" :  {
-      "defaultRecordType" :  "default"
-    },
-    "account" :  {
-      "defaultRecordType" :  "default"
+    "languageSettings": {
+      "enableTranslationWorkbench": true
     }
   }
 }
