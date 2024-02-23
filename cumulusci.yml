@@ -2,7 +2,7 @@ minimum_cumulusci_version: '3.60.0'
 project:
     name: cUnite_FlowDuplicateCheck
     package:
-        name: 'FlowToolKit: Duplicate Check'
+        name: 'Flow Tool Kit: Duplicate Checker'
         namespace: FlowToolKit
         api_version: '54.0'
     git:
